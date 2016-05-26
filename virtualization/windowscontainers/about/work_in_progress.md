@@ -36,6 +36,8 @@ If your container is taking more than 30 seconds to start, it may be performing 
 
 Many anti-malware solutions, such as Windows Defender, may be unnecessarily scanning files with-in container images including all of the OS binaries and files in the container OS image.  This occurs when ever a new container is created and from the anti-malware’s perspective all of the “container’s files” look like new files that have not previously been scanned.  So when processes inside the container attempt to read these files the anti-malware components first scan them before allowing access to the files.  In reality these files were already scanned when the container image was imported or pulled to the server. In future previews new infrastructure will be in place such that anti-malware solutions, including Windows Defender, will be aware of these situations and can act accordingly to avoid multiple scans. 
 
+The new infrastructure is available in TP5 for anti-malware solutions -  https://msdn.microsoft.com/en-us/windows/hardware/drivers/ifs/anti-virus-optimization-for-windows-containers
+
 ### Start/Stop sometimes fails if memory is restricted to < 48MB
 Windows Containers experience random, inconsistant, errors when memory is restricted to less than 48MB.
 
